@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册页面</title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/register.css">
+</head>
+<body>
+    <form action="/register" method="POST">
+		<div>
+			<label for="name">登录用户名</label>
+			<input type="text" name="user_name" id="name">
+			<button type="button" id="btn_add">验证</button>
+			<p class="name" id="p_name"></p>
+		</div>
+		<div>
+			<label for="chName">密码</label>
+			<input type="text" name="user_pass" id="pass">
+			<button type="button" id="btn_mi">验证</button>
+			<p class="chName" id="p_pass"></p>
+		</div>
+		<div>
+			<label for="enName">确认密码</label>
+			<input type="text" name="user_pass2" id="pass2">
+			<button type="button" id="btn_que">验证</button>
+			<p class="chName" id="p_pass2"></p>
+		</div>
+		<div>
+			<label for="bie">别名</label>
+			<input type="text" name="user_bie" id="bie">
+			<button type="button" id="btn_bie">验证</button>
+			<p class="chName" id="p_bie"></p>
+		</div>
+		<div>
+			<label for="bie">手机号码</label>
+			<input type="text" name="user_shou" id="shou">
+			<button type="button" id="btn_shou">验证</button>
+			<p class="chName" id="p_shou"></p>
+		</div>
+		<div>
+			<label for="bie">邮箱</label>
+			<input type="text" name="user_you" id="you">
+			<button type="button" id="btn_you">验证</button>
+			<p class="chName" id="p_you"></p>
+		</div>
+		<div>
+			<label for="bie">性别</label>
+			<input type="text" name="user_xing" id="xing">
+			<button type="button" id="btn_xing">验证</button>
+			<p class="chName" id="p_xing"></p>
+		</div>
+		<div>
+			<label for="bie">所属班级</label>
+			<input type="text" name="user_ban" id="ban">
+			<button type="button" id="btn_ban">验证</button>
+			<p class="chName" id="p_ban"></p>
+		</div>
+		<div>
+			<label for="bie">爱好</label>
+			<input type="text" name="user_ai" id="ai">
+			<button type="button" id="btn_ai">验证</button>
+			<p class="chName" id="p_ai"></p>
+		</div>
+		<div>
+			<input type="submit" value="注册" id="zhu">
+		</div>
+    </form>
+	<script type="text/javascript" src="/javascripts/register.js"></script>
+</body>
+</html>
