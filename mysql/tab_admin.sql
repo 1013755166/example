@@ -1,0 +1,1 @@
+INSERT INTO `tab_admin` VALUES (11111, 48, '冷高丽', 13, '15070254591');
