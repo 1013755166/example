@@ -19,7 +19,11 @@ router.post('/',(req,res) =>{
    connection.connect();
    var query="insert denglu(name,pass)values('"+user.user_name+"','"+user.user_pass+"')"
    connection.query(query,(err,result)=>{
-       res.render('lgl');
+       if(err){
+           console.log(err)
+       }else{
+           res.render('lgl');
+       }
    })
    connection.end();
 });

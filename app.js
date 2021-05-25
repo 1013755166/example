@@ -4,7 +4,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var ejs =require('ejs');
-var session =require('express-session');
 
 var indexRouter = require('./routes/index');
 var registerRouter =require('./routes/register');
@@ -13,6 +12,7 @@ var shopRouter =require('./routes/shop');
 var ggRouter =require('./routes/gg');
 var index1Router =require('./routes/index1');
 var fkRouter =require('./routes/fk');
+var singleRouter =require('./routes/shop-single');
 
 var app = express();
 
@@ -24,11 +24,8 @@ app.set('view engine', 'html');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser("123"));
-app.use(session({
-  secret:"123",
-  cookie:{maxAge:70000}
-}));
+app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/',lglRouter);
@@ -38,6 +35,7 @@ app.use('/shop',shopRouter);
 app.use('/gg',ggRouter);
 app.use('/index1',index1Router);
 app.use('/fk',fkRouter);
+app.use('/shop-single',singleRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

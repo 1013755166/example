@@ -10,7 +10,16 @@
 
 </head>
 <body>
-
+  <div id="fom">
+    <form action="/index1" method="POST" >
+      粉丝名：<input type="text" name="name1" ><br>
+      账号：<input type="text" name="id1" ><br>
+      电话：<input type="text" name="phone" ><br>
+      贡献数：<input type="text" name="num" ><br>
+      年龄：<input type="text" name="age" ><br>
+    <input type="submit" value="提交">
+    </form>
+  </div>
 <div class="lvc-wrap" id="lvc-nav">
   <ul class="lvc-nav">
     <li class="nav-pic1 next-layer" title="粉丝展示">
@@ -49,6 +58,21 @@
       <td>按钮</td>
     </tr>
   </thead>
+  <tbody>
+    <% datas.forEach ((o,i) =>{ %>
+    <tr>
+      <td><%=o.name %></td>
+      <td><%=o.id %></td>
+      <td><%=o.phone %></td>
+      <td><%=o.num %></td>
+      <td><%=o.age %></td>
+      <td>
+        <a href="/index1/del/<%=o.id %>">删除</a>
+        <a href="/index1/toUpdate/<%=o.id%>">修改</a>
+      </td>
+    </tr>
+    <%})%>
+  </tbody>
   <tfoot>
     <td colspan="6">
       <input type="button" value="上一页" id="uppage">
@@ -56,49 +80,10 @@
       <input type="button" value="下一页" id="nextpage">
     </td>
   </tfoot>
+  
 </table>
 
-<script type="text/javascript">
-$(document).ready(function(){
-    //展开收起
-    $(".btn-nav").click(function () {
-      $(".lvc-wrap").toggleClass("lvc-close")
-      $("ol").toggleClass("small-ol")
-      $(".next-layer ol").hide()
-
-      if($("#lvc-nav").hasClass('lvc-close')){
-        $(".next-layer ").removeClass("arrow")
-      }
-    })
-
-    //选中状态
-    $(".lvc-nav li").click(function () {
-      $(this).siblings().find('ol').hide()
-      $(this).addClass("active").siblings().removeClass("active")
-    })
-
-    //选中子集清除父级active
-    $("ol>li").click(function (e) {
-      console.log('ol>li clicked')
-      e.stopPropagation()
-     $(this).parent().parent().removeClass("active")
-    })
-
-    //二级导航展开收起
-    $(".next-layer").click(function () {
-      $(this).children("ol").toggle();
-      $(this).toggleClass("arrow").siblings().removeClass("arrow")
-    })
-
-
-     $("ol li").click(function () {
-       if($("ol").hasClass('small-ol')) {
-         $(".small-ol").hide();
-         $(this).parent().parent().addClass("active")
-       }
-     })
-})
-</script>
+<script type="text/javascript" src="/javascripts/task.js"></script>
 
 <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
 <p>适用浏览器：360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. 不支持Safari、IE8及以下浏览器。</p>

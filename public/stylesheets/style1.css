@@ -204,7 +204,6 @@ ul, li {
 }
 
 table {
-	width: 800px;
 
 	margin: 200px auto;
 
@@ -246,4 +245,7 @@ td {
 	top:  22px;
 
 	border-top: 10px solid #fff;
+}
+#fom{
+	text-align: center;
 }
