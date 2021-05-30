@@ -39,23 +39,27 @@ router.get('/del/:id', function (req, res) {
     });
 });
 /*修改*/
-router.get('/toUpdate/:id', function (req, res) {
+router.get('/update/:id', function (req, res) {
     var id = req.params.id;
     db.sql("select * from tab_admin where id=" + id, function (err, rows) {
         if (err) {
             res.end('修改页面跳转失败：' + err);
         } else {
-            res.render("update", {datas: rows});
+            console.log(rows);
+            res.render('update',{data:rows});
         }
     });
 });
 router.post('/update', function (req, res) {
-    var name1 = req.body.name1;
-    var id1 = req.body.id1;
-    var num=req.body.num
-    var phone=req.body.phone
-    var age = req.body.age;
-    db.sql("update tab_admin set name='" + name1 + "',age='" + age + "',num='"+num+"',phone='"+phone+"' where id=" + id1, function (err, rows) {
+    let name = req.body.name;
+    let id= req.body.id;
+    let num=req.body.num;
+    let phone=req.body.phone;
+    let age = req.body.age;
+    console.log(req.body.name)
+    sl="update tab_admin set name='" + name + "',age='" + age + "',num='"+num+"',phone='"+phone+"',id='"+id+"' where id=" + id
+    db.sql(sl, function (err, rows) {
+        console.log(rows);
         if (err) {
             res.end('修改失败：' + err);
         } else {

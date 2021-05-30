@@ -50,7 +50,7 @@
       </td>
     </tr>
     <tr>
-      <td>粉丝名</span></td>
+      <td>粉丝名</td>
       <td>账号<span class="upBtn"></span><span class="downBtn"></td>
       <td>电话<span class="upBtn"></span><span class="downBtn"></td>
       <td>贡献数<span class="upBtn"></span><span class="downBtn"></td>
@@ -68,10 +68,11 @@
       <td><%=o.age %></td>
       <td>
         <a href="/index1/del/<%=o.id %>">删除</a>
-        <a href="/index1/toUpdate/<%=o.id%>">修改</a>
+        <a href="/index1/update/<%=o.id%>">修改</a>
       </td>
     </tr>
-    <%})%>
+    <%})
+    %>
   </tbody>
   <tfoot>
     <td colspan="6">

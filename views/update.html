@@ -4,20 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/stylesheets/update.css" rel="stylesheet" type="text/css">
     <title>Document</title>
 </head>
 <body> 
-    <div id="dd">
-    <from action="/update" method="POST">
-        <span>新增数据</span>
-                粉丝名：<input type="text" name="name1"/>
-                账号：<input type="text" name="id1">
-                电话：<input type="text" name="phone">
-                贡献数：<input type="text" name="num">
-                年龄：<input type="text" name="age">
-                <input type="submit" value="确定" >
-    </from> 
-    </div>
+    <form action="/index1/update" method="POST">
+        粉丝名：<input type="text" name="name" value="<% data[0].name %>"/>
+        账号：<input type="text" name="id" value="<% data[0].id %>">
+        电话：<input type="text" name="phone" value="<% data[0].phone %>">
+        贡献数：<input type="text" name="num" value="<% data[0].num %>">
+        年龄：<input type="text" name="age" value="<% data[0].age %>">
+              <input type="submit" value="确定" >
+    </form>
 </body>
 </html>
